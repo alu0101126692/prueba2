@@ -10,5 +10,8 @@ RSpec.describe Foodie do
   it "Existe un metodo para obtener el nombre del Alimento" do
   expect(@vaquita.nombre).to eq("Carne de vaca")
 end
+it "Se ha podido introducir la cantidad de gases" do
+    @vaquita.gases = 50.0
+  end
 
 end
