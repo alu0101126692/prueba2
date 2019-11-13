@@ -23,6 +23,14 @@ end
 		end
 		"(#{prot_max},#{gases},#{terreno})"
 	end
-	
+	def mujer(prot1,prot2,prot3,terr1,terr2,terr3,gas1,gas2,gas3)
+		if (prot1 + prot2 + prot3) >= 41
+	    prot_max = prot1 + prot2 + prot3
+			gases = terr1 + terr2 + terr3
+			terreno = gas1+ gas2+ gas3
+
+		end
+		"(#{prot_max},#{gases},#{terreno})"
+	end
 
 end
