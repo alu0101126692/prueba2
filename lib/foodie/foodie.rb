@@ -23,5 +23,6 @@ end
 		end
 		"(#{prot_max},#{gases},#{terreno})"
 	end
+	
 
 end

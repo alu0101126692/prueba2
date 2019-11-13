@@ -44,4 +44,16 @@ it "Impacto ambiental diario de un hombre" do
   expect(@cantidad.hombre(@vaquita.prot,@cordero.prot,@camarones.prot,@vaquita.gases,@cordero.gases,@camarones.gases,@vaquita.terreno,@cordero.terreno,@camarones.terreno)).to eq("(56.7,88.0,351.0)")
 
 end
+  it "Impacto ambiental diario de una mujer" do
+    @cordero = Alimentos.new("Cordero")
+    @cordero.prot = 18.0
+    @cordero.gases = 20.0
+    @cordero.terreno = 185.0
+    @camarones = Alimentos.new("Camarones")
+    @camarones.prot = 17.6
+    @camarones.gases = 18.0
+    @camarones.terreno = 2.0
+    @cantidad = Alimentos.new("Vaca,Cordero,Camarones")
+    expect(@cantidad.mujer(@vaquita.prot,@cordero.prot,@camarones.prot,@vaquita.gases,@cordero.gases,@camarones.gases,@vaquita.terreno,@cordero.terreno,@camarones.terreno)).to eq("(56.7,88.0,351.0)")
+  end
 end
