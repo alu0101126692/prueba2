@@ -13,5 +13,8 @@ end
 it "Se ha podido introducir la cantidad de gases" do
     @vaquita.gases = 50.0
   end
+  it "Se puede obtener la cantidad de gases" do
+  expect(@vaquita.gases).to eq(50.0)
+end
 
 end
