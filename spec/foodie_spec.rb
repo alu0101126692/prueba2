@@ -28,4 +28,7 @@ it "Se ha podido introducir la cantidad de terreno usado" do
   @vaquita.lip = 3.1
   expect(@vaquita.to_s).to eq("(Carne de vaca,21.1,0.0,3.1,50.0,164.0)")
 end
+it "Existe un metodo para obtener el valor energetico de un alimento" do
+    expect(@vaquita.val_en).to eq(112.3)
+end
 end
