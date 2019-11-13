@@ -1,4 +1,5 @@
 class Alimentos
+	include Comparable
 	attr_reader :nombre, :gases, :terreno, :prot, :carbo, :lip
 	attr_writer :gases, :terreno, :prot, :carbo, :lip
 	def initialize (nombre)
@@ -13,5 +14,6 @@ class Alimentos
 	kcall = lip * 9
 	(kcalc + kcalp + kcall).round(1)
 end
+
 
 end
