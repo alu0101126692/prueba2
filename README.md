@@ -1,43 +1,15 @@
-# Foodie
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/foodie`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+Title P5: Desarrollo Dirigido por Pruebas (TDD). 
 
-## Installation
+LPP ULL Curso 19/20 Autor: Pablo Torres Albertos
 
-Add this line to your application's Gemfile:
+Generar un archivo de pruebas a priori (TDD). En este archivo se escribiran las pruebas una a una por cada método y luego en el archivo de la clase se escribirá el codigo de cada método. El código manejará 6 tipos de datos: el nombre del alimento, las proteínas, los carbohidratos, los lípidos, las emisiones de gases y el terreno usado al año. 
 
-```ruby
-gem 'foodie'
-```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install foodie
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/foodie. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Foodie project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/foodie/blob/master/CODE_OF_CONDUCT.md).
+Existe un etodo para obtener las emisiones de gases de efecto invernadero.
+Existe un metodo para obtener el terreno utilizado.
+Existe un metodo para obtener el alimento formateado.
+Existe un metodo para obtener el valor energetico de un alimento.
+Se calcula correctamente el impacto ambiental diario de un hombre de 20-39 años.
+Se calcula correctamente el impacto ambiental diario de unamujer de 20-39 años.
