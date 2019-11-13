@@ -19,5 +19,7 @@ end
 it "Se ha podido introducir la cantidad de terreno usado" do
     @vaquita.terreno = 164.0
   end
-
+  it "Se puede obtener la cantidad de terreno usado" do
+      expect(@vaquita.terreno).to eq(164.0)
+    end
 end
