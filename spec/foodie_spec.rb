@@ -1,9 +1,10 @@
-RSpec.describe Foodie do
-  it "has a version number" do
-    expect(Foodie::VERSION).not_to be nil
-  end
+require 'foodie'
 
-  it "does something useful" do
-    expect(false).to eq(true)
+RSpec.describe Foodie do
+  before(:all) do
+    @vaquita = Alimentos.new("Carne de vaca")
+  end
+  it "Existe un nombre para el alimento" do
+    @vaquita = Alimentos.new("Carne de vaca")
   end
 end
