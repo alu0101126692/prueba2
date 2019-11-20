@@ -60,18 +60,21 @@ end
 RSpec.describe Listas do 
 	before(:all) do
                 @lista = Listas.new()
-		Node = Struct.new(:value, :next, :prev)
+		@lista2 = Listas.new()
 		
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
-                @node = Node.new(@vaquita,nil,nil)
-		expect(@node.value).to eq(@vaquita)
-		expect(@node.next).to eq(nil)
-		expect(@node.prev).to eq(nil)
+               
         end
 	it "Debe existir una Lista con su cabeza y su cola" do
 		expect(@lista.head).to eq(nil)
 		expect(@lista.tail).to eq(nil)
+	end
+	it "Se puede insertar un elemento en la lista" do
+		@lista2.insert_head(@vaquita)
+		expect(@lista2.head.value).to eq(@vaquita)
+		
+		 
 	end	
 
 
