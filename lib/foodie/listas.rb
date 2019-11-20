@@ -1,12 +1,9 @@
-class Listas
-
-
-	
-                
-
+class Listas                
+attr_reader :head, :tail
 
 	def initialize()
-		@head = @node
-		@tail = @node
+		@head = nil
+                @tail = nil
+
 	end
 end
