@@ -1,11 +1,11 @@
 class Listas
 
 
-	Node = Struct.new(:value, :next, :prev)
+	
                 
 
 
-	def initialize(value)
+	def initialize()
 		@head = @node
 		@tail = @node
 	end
