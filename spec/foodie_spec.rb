@@ -92,5 +92,8 @@ RSpec.describe Listas do
                 expect(@lista4.tail.next.value).to eq(@cordero)
 
 	end
-
+	it "Se extrae el primer elemento de la Lista" do
+		@lista3.pop()
+		expect(@lista3.head.value).to eq(@vaquita)
+	end
 end
