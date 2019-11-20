@@ -82,6 +82,8 @@ RSpec.describe Listas do
                 expect(@lista2.head.value).to eq(@camarones)			 
 	end	
 	it "Se pueden insertar varios elementos" do
+		@lista3 = Listas.new()
+		@lista4 = Listas.new()
 		@lista3.insert_head_var(@vaquita,@camarones)
 		expect(@lista3.head.value).to eq(@camarones)
 		expect(@lista3.head.prev.value).to eq(@vaquita)

@@ -28,4 +28,14 @@ Node = Struct.new(:value, :next, :prev)
                          @tail = @node
                 end
         end
+	  def insert_head_var(value,value2)
+                insert_head(value)
+		insert_head(value2)
+  	  end
+	  def insert_tail_var(value,value2)
+                insert_tail(value)
+                insert_tail(value2)
+          end
+	
+
 end
