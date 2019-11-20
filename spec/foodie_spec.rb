@@ -6,6 +6,7 @@ RSpec.describe Foodie do
   end
   it "Existe un nombre para el alimento " do
     @vaquita = Alimentos.new("Carne de vaca")
+    @huevos = Alimentos.new("Huevos")
   end
   it "Existe un metodo para obtener el nombre del Alimento" do
   expect(@vaquita.nombre).to eq("Carne de vaca")
@@ -78,11 +79,16 @@ RSpec.describe Listas do
 		@lista2.insert_tail(@vaquita)
                 expect(@lista2.tail.value).to eq(@vaquita)
 		@lista2.insert_head(@camarones)
-                expect(@lista2.head.value).to eq(@camarones)
-
-
-		 
+                expect(@lista2.head.value).to eq(@camarones)			 
 	end	
+	it "Se pueden insertar varios elementos" do
+		@lista3.insert_head_var(@vaquita,@camarones)
+		expect(@lista3.head.value).to eq(@camarones)
+		expect(@lista3.head.prev.value).to eq(@vaquita)
+		@lista4.insert_tail_var(@cordero,@huevos)
+		expect(@lista4.tail.value).to eq(@huevos)
+                expect(@lista4.tail.next.value).to eq(@cordero)
 
+	end
 
 end
