@@ -67,11 +67,12 @@ RSpec.describe Listas do
                 @node = Node.new(@vaquita,nil,nil)
 		expect(@node.value).to eq(@vaquita)
 		expect(@node.next).to eq(nil)
-		expect(@node.next).to eq(nil)
-		 
-
-
+		expect(@node.prev).to eq(nil)
         end
+	it "Debe existir una Lista con su cabeza y su cola" do
+		expect(@lista.head).to eq(nil)
+		expect(@lista.tail).to eq(nil)
+	end	
 
 
 end
