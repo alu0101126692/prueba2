@@ -108,8 +108,8 @@ RSpec.describe Listas do
 		@lista6 = Listas.new()
                 @lista6.insert_tail_var(@vaquita,@camarones)
                 expect(@lista6.tail.value).to eq(@camarones)
-                @lista5.pop_tail()
-                expect(@lista5.tail.value).to eq(@vaquita)
+                @lista6.pop_tail()
+                expect(@lista6.tail.value).to eq(@vaquita)
 
 	end
 end

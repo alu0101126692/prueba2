@@ -46,5 +46,16 @@ Node = Struct.new(:value, :next, :prev)
 			@head.next = nil
 		end
 	  end
+	  def pop_tail
+                if (@head == @tail)
+                        @head = nil
+                        @tail = nil
+                else
+
+                        @tail = @tail.next
+                        @tail.prev = nil
+                end
+          end
+
 
 end
