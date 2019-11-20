@@ -73,7 +73,14 @@ RSpec.describe Listas do
 	it "Se puede insertar un elemento en la lista" do
 		@lista2.insert_head(@vaquita)
 		expect(@lista2.head.value).to eq(@vaquita)
-		
+		@lista2.insert_tail(@camarones)
+		expect(@lista2.tail.value).to eq(@camarones)
+		@lista2.insert_tail(@vaquita)
+                expect(@lista2.tail.value).to eq(@vaquita)
+		@lista2.insert_head(@camarones)
+                expect(@lista2.head.value).to eq(@camarones)
+
+
 		 
 	end	
 
