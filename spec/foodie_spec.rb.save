@@ -59,15 +59,12 @@ end
 end
 RSpec.describe Listas do 
 	before(:all) do
-                @lista = Listas.new(vaquita)
-        end
-        it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
-                
-		expect(@lista.head).to eq(nil)
-		expect(@lista.tail).to eq(nil)
+    		@lista = Listas.new(vaquita)
+ 	end
+  	it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
+   		 expect(@lista.value).not_to eq(nil)
+		
 
-
-        end
-
+  	end
 
 end
