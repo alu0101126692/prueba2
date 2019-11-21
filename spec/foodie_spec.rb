@@ -38,6 +38,8 @@ RSpec.describe Listas do
 		@lentejas = Alimentos.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
 		@cerdo = Alimentos.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
 		@queso = Alimentos.new("Queso",25.0,1.3,33.0,11.0,41.0)
+		@cafe = Alimentos.new("Cafe",0.1,0.0,0.0,0.4,0.3)
+		@nuez = Alimentos.new("Nuez",20.0,21.0,54.0,0.3,7.9)
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                
@@ -87,8 +89,38 @@ RSpec.describe Listas do
 		@esp.insert_head_var(@lentejas,@lentejas)
 		@esp.insert_head_var(@leche,@leche)
 		@esp.insert_head_var(@cerdo,@cerdo)
-		@esp.insert_head_var(@queso,@queso)
-		expect(@esp.gei).to eq(49.0)
-	
+		@esp.insert_head_var(@chocolate,@chocolate)
+                @esp.insert_head_var(@lentejas,@lentejas)
+                @esp.insert_head_var(@leche,@leche)
+                @esp.insert_head_var(@cerdo,@cerdo)
+                @esp.insert_head_var(@queso,@queso)
+		expect(@esp.gei.round).to eq(76)
+		@vas = Listas.new()
+		@vas.insert_head_var(@chocolate,@chocolate)
+		@vas.insert_head_var(@chocolate,@chocolate)
+		@vas.insert_head_var(@lentejas,@lentejas)
+		@vas.insert_head_var(@cordero,@cerdo)
+		expect(@vas.gei.round).to eq(38) 
+		@veg = Listas.new()
+		@veg.insert_head_var(@chocolate,@chocolate)
+                @veg.insert_head_var(@lentejas,@lentejas)
+                @veg.insert_head_var(@leche,@leche)
+                @veg.insert_head_var(@cafe,@nuez)
+                @veg.insert_head_var(@queso,@queso)
+		expect(@veg.gei.round).to eq(34)
+		@veg2 = Listas.new()
+		@veg2.insert_head_var(@chocolate,@chocolate)
+                @veg2.insert_head_var(@chocolate,@chocolate)
+                @veg2.insert_head_var(@lentejas,@lentejas)
+                @veg2.insert_head_var(@cafe,@nuez)
+		expect(@veg2.gei.round).to eq(11)
+		@carne = Listas.new()
+		@carne.insert_head_var(@cerdo,@cordero)
+                @carne.insert_head_var(@vaquita,@cerdo)
+                @carne.insert_head_var(@lentejas,@lentejas)
+                @carne.insert_head_var(@cafe,@nuez)
+		expect(@carne.gei.round).to eq(87)
+
+		
 	end
 end
