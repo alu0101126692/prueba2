@@ -135,11 +135,11 @@ RSpec.describe Listas do
                 expect(@carne.gei.round*365).to eq(31755)
 	end
 	it "Crear expectativas para estimar uso de terreno anual de cada dieta" do
-                expect(@esp.terr.round).to eq(76)
-                expect(@vas.terr.round).to eq(38) 
-                expect(@veg.terr.round).to eq(34)
-                expect(@veg2.terr.round).to eq(11)
-                expect(@carne.terr.round).to eq(87)
+                expect(@esp.terr.round).to eq(189)
+                expect(@vas.terr.round).to eq(216) 
+                expect(@veg.terr.round).to eq(122)
+                expect(@veg2.terr.round).to eq(29)
+                expect(@carne.terr.round).to eq(386)
         end
 
 end

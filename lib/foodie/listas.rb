@@ -67,6 +67,18 @@ Node = Struct.new(:value, :next, :prev)
 		end
 		sum += @tail.value.gases
 	  end
+	  def terr
+                sum = 0
+                @node1 = Node.new(nil,nil,nil)
+                @node1 = @head
+                until @node1 == @tail do
+                        sum += @node1.value.terreno
+                        @node1 = @node1.prev
+
+                end
+                sum += @tail.value.terreno
+          end
+
 
 
 end
