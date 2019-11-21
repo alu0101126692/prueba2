@@ -12,8 +12,8 @@ Node = Struct.new(:value, :next, :prev)
                         @head = @node
                         @tail = @node
                 else
-                         @node = Node.new(value,nil,head)
-                         @head.prev = @node 
+                         @node = Node.new(value,nil,@head)
+                         @head.next = @node 
                          @head = @node
                 end
         end
@@ -23,8 +23,8 @@ Node = Struct.new(:value, :next, :prev)
                         @head = @node
                         @tail = @node
                 else
-                         @node = Node.new(value,tail,nil)
-                         @tail.next = @node 
+                         @node = Node.new(value,@tail,nil)
+                         @tail.prev = @node 
                          @tail = @node
                 end
         end
@@ -56,6 +56,17 @@ Node = Struct.new(:value, :next, :prev)
                         @tail.prev = nil
                 end
           end
+	  def gei
+		sum = 0
+		@node1 = Node.new(nil,nil,nil)
+		@node1 = @head
+		until @node1 == @tail do 
+			sum += @node1.value.gases
+			@node1 = @node1.prev
+					
+		end
+		sum += @tail.value.gases
+	  end
 
 
 end

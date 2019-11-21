@@ -2,8 +2,13 @@ class Alimentos
 	include Comparable
 	attr_reader :nombre, :gases, :terreno, :prot, :carbo, :lip
 	attr_writer :gases, :terreno, :prot, :carbo, :lip
-	def initialize (nombre)
+	def initialize (nombre,prot,carbo,lip,gei,terr)
 		@nombre = nombre
+		@prot = prot
+		@carbo = carbo
+		@lip = lip
+		@gases = gei
+		@terreno = terr
 	end
 	def to_s
 		"(#{nombre},#{prot},#{carbo},#{lip},#{gases},#{terreno})"

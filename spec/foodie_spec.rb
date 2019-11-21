@@ -2,12 +2,9 @@ require 'foodie'
 
 RSpec.describe Foodie do
   before(:all) do
-    @vaquita = Alimentos.new("Carne de vaca")
+    @vaquita = Alimentos.new("Carne de vaca",21.0,0.0,3.1,50.0,164.0)
   end
-  it "Existe un nombre para el alimento " do
-    @vaquita = Alimentos.new("Carne de vaca")
-    @huevos = Alimentos.new("Huevos")
-  end
+  
   it "Existe un metodo para obtener el nombre del Alimento" do
   expect(@vaquita.nombre).to eq("Carne de vaca")
 end
@@ -23,40 +20,8 @@ it "Se ha podido introducir la cantidad de terreno usado" do
   it "Se puede obtener la cantidad de terreno usado" do
       expect(@vaquita.terreno).to eq(164.0)
     end
-  it "Existe un metodo para obtener el alimento formateado" do
-  @vaquita.prot = 21.1
-  @vaquita.carbo = 0.0
-  @vaquita.lip = 3.1
-  expect(@vaquita.to_s).to eq("(Carne de vaca,21.1,0.0,3.1,50.0,164.0)")
-end
-it "Existe un metodo para obtener el valor energetico de un alimento" do
-    expect(@vaquita.val_en).to eq(112.3)
-end
-it "Impacto ambiental diario de un hombre" do
-  @cordero = Alimentos.new("Cordero")
-  @cordero.prot = 18.0
-  @cordero.gases = 20.0
-  @cordero.terreno = 185.0
-  @camarones = Alimentos.new("Camarones")
-  @camarones.prot = 17.6
-  @camarones.gases = 18.0
-  @camarones.terreno = 2.0
-  @cantidad = Alimentos.new("Vaca,Cordero,Camarones")
-  expect(@cantidad.hombre(@vaquita.prot,@cordero.prot,@camarones.prot,@vaquita.gases,@cordero.gases,@camarones.gases,@vaquita.terreno,@cordero.terreno,@camarones.terreno)).to eq("(56.7,88.0,351.0)")
 
-end
-  it "Impacto ambiental diario de una mujer" do
-    @cordero = Alimentos.new("Cordero")
-    @cordero.prot = 18.0
-    @cordero.gases = 20.0
-    @cordero.terreno = 185.0
-    @camarones = Alimentos.new("Camarones")
-    @camarones.prot = 17.6
-    @camarones.gases = 18.0
-    @camarones.terreno = 2.0
-    @cantidad = Alimentos.new("Vaca,Cordero,Camarones")
-    expect(@cantidad.mujer(@vaquita.prot,@cordero.prot,@camarones.prot,@vaquita.gases,@cordero.gases,@camarones.gases,@vaquita.terreno,@cordero.terreno,@camarones.terreno)).to eq("(56.7,88.0,351.0)")
-  end
+
 end
 RSpec.describe Listas do 
 	before(:all) do
@@ -64,11 +29,15 @@ RSpec.describe Listas do
 		@lista2 = Listas.new()
 		@lista3 = Listas.new()
 		@lista4 = Listas.new()
-		@vaquita = Alimentos.new("Carne de vaca")
-		@huevos = Alimentos.new("Huevos")
-		@cordero = Alimentos.new("Cordero")
-		@camarones = Alimentos.new("Camarones")
-
+		@vaquita = Alimentos.new("Carne de vaca",21.0,0,3.1,50.0,164.0)
+		@huevos = Alimentos.new("Huevos",13.0,1.1,11,4.2,5.7)
+		@cordero = Alimentos.new("Cordero",18.0,0.0,17.0,20.0,185.0)
+		@camarones = Alimentos.new("Camarones",17.6,1.5,0.6,18.0,2.0)
+		@leche = Alimentos.new("Leche",3.3,4.8,3.2,3.2,8.9)
+		@chocolate = Alimentos.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+		@lentejas = Alimentos.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+		@cerdo = Alimentos.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
+		@queso = Alimentos.new("Queso",25.0,1.3,33.0,11.0,41.0)
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                
@@ -111,5 +80,15 @@ RSpec.describe Listas do
                 @lista6.pop_tail()
                 expect(@lista6.tail.value).to eq(@vaquita)
 
+	end
+	it "Crear expectativas para estimar emisiones de datos cada lista" do
+		@esp = Listas.new()
+		@esp.insert_head_var(@chocolate,@chocolate)
+		@esp.insert_head_var(@lentejas,@lentejas)
+		@esp.insert_head_var(@leche,@leche)
+		@esp.insert_head_var(@cerdo,@cerdo)
+		@esp.insert_head_var(@queso,@queso)
+		expect(@esp.gei).to eq(49.0)
+	
 	end
 end
