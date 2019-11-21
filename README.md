@@ -1,15 +1,28 @@
 
 
-Title P5: Desarrollo Dirigido por Pruebas (TDD). 
+Title P7: Desarrollo Dirigido por Pruebas (TDD). 
 
 LPP ULL Curso 19/20 Autor: Pablo Torres Albertos
 
-Generar un archivo de pruebas a priori (TDD). En este archivo se escribiran las pruebas una a una por cada método y luego en el archivo de la clase se escribirá el codigo de cada método. El código manejará 6 tipos de datos: el nombre del alimento, las proteínas, los carbohidratos, los lípidos, las emisiones de gases y el terreno usado al año. 
+Usar la gema "Foodie" de la práctica anterior y:
+	
+	1. Crear una estructura lista con sus nodos
+	2. Calcular de diferentes dietas la emision de gases diaria y anual y 
+	el uso del terreno anual
 
+Pruebas que debe realizar el TDD:
 
-Existe un etodo para obtener las emisiones de gases de efecto invernadero.
-Existe un metodo para obtener el terreno utilizado.
-Existe un metodo para obtener el alimento formateado.
-Existe un metodo para obtener el valor energetico de un alimento.
-Se calcula correctamente el impacto ambiental diario de un hombre de 20-39 años.
-Se calcula correctamente el impacto ambiental diario de unamujer de 20-39 años.
+Sobre las listas:
+
+Debe existir un Nodo de la lista con sus datos, su siguiente y su previo
+Debe existir una Lista con su cabeza y su cola
+Se puede insertar un elemento en la Lista
+Se pueden insertar varios elementos en la Lista
+Se extrae el primer elemento de la Lista
+Se extrae el ultimo elemento de la Lista
+
+Sobre las dietas:
+
+Crear expectativas para estimar las emisiones diarias de gases de efecto invernadero para cada dieta.
+Crear expectativa para estimar las emisiones anuales de gases de efecto invernadero para cada dieta.
+Crear expectitivas para estimar los metros cuadrados de usode terreno para cada dieta.
