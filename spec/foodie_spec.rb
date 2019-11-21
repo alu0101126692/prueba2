@@ -120,20 +120,26 @@ RSpec.describe Listas do
                 expect(@lista6.tail.value).to eq(@vaquita)
 
 	end
-	it "Crear expectativas para estimar emisiones de datos cada lista" do
+	it "Crear expectativas para estimar emisiones de gases diarias de cada lista" do
 		expect(@esp.gei.round).to eq(76)
 		expect(@vas.gei.round).to eq(38) 
 		expect(@veg.gei.round).to eq(34)
 		expect(@veg2.gei.round).to eq(11)
 		expect(@carne.gei.round).to eq(87)
 	end
-	it "Crear expectativas para estimar emisiones de datos cada dieta" do
+	it "Crear expectativas para estimar emisiones de gases anuales de cada dieta" do
 		expect(@esp.gei.round*365).to eq(27740)
                 expect(@vas.gei.round*365).to eq(13870)
                 expect(@veg.gei.round*365).to eq(12410)
                 expect(@veg2.gei.round*365).to eq(4015)
                 expect(@carne.gei.round*365).to eq(31755)
-	
-		
 	end
+	it "Crear expectativas para estimar uso de terreno anual de cada dieta" do
+                expect(@esp.terr.round).to eq(76)
+                expect(@vas.terr.round).to eq(38) 
+                expect(@veg.terr.round).to eq(34)
+                expect(@veg2.terr.round).to eq(11)
+                expect(@carne.terr.round).to eq(87)
+        end
+
 end
