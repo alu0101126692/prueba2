@@ -83,7 +83,7 @@ Node = Struct.new(:value, :next, :prev)
 	  def each(&block)
 		puntero = @head
 		while(puntero!=nil) do
-			yield puntero.value
+			yield puntero.value  #la lista se recorre alreves
 			puntero = puntero.prev
 		end
 	  end

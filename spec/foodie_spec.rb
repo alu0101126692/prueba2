@@ -86,7 +86,7 @@ RSpec.describe Listas do
 		@enum = Listas.new()
                 @enum.insert_head_var(@queso,@cafe)
 		@enum.insert_head(@nuez)
-		@plato1 = Plato.new(plato)
+		@plato1 = Plato.new("plato1")
 				
 
 
@@ -175,8 +175,8 @@ RSpec.describe Listas do
 
 	end
 	context "Plato" do
-		it "Obteniendo el nombre de un plato" do
-			expect(@plato1.nombre).to eq(plato1)
+		it "Obteniendo el nombre de un plato" do	
+			expect(@plato1.nombre).to eq("plato1")
 		end
 	end
 
