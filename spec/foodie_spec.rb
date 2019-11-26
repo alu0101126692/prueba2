@@ -87,8 +87,8 @@ RSpec.describe Listas do
                 @enum.insert_head_var(@queso,@cafe)
 		@enum.insert_head(@nuez)
 		@plato1 = Plato.new("plato1")
-				
-
+		@listp = Listas.new()
+		@listp.instert_head_var(@queso,@cafe)
 
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
@@ -177,6 +177,9 @@ RSpec.describe Listas do
 	context "Plato" do
 		it "Obteniendo el nombre de un plato" do	
 			expect(@plato1.nombre).to eq("plato1")
+		end
+		it "Existe un conjunto de alimentos" do
+			expect(@plato1.lista).to eq(@listp)
 		end
 	end
 

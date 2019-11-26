@@ -1,8 +1,9 @@
 class Plato
-	attr_reader :nombre
+	attr_reader :nombre, :lista
 
-	def initialize (nombre) 
+	def initialize (nombre,lista) 
 		@nombre = nombre
+		
 	end
 
 end
