@@ -147,6 +147,9 @@ RSpec.describe Listas do
         	it "Utilizar modulo Comparable para comparar la eficencia energetica" do
                 	expect(@vaquita.val_en > @huevos.val_en).to eq(false)
         	end
+		it "Comparar informacion nutricional y ambiental" do
+			expect(@vaquita.prot > @huevos.prot).to eq (false)
+		end
 	end
 
 

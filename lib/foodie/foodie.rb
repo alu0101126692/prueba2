@@ -40,5 +40,6 @@ class Alimentos
 	end
 	def <=>(other)
 		val_en <=> other.val_en
+		prot <=> other.prot
 	end
 end
