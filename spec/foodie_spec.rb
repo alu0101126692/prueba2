@@ -186,6 +186,9 @@ RSpec.describe Listas do
 		it "Existe un conjunto de cantidades alimentos" do
                         expect(@plato1.listagr).to eq(@listgr)
                 end
+		it "Porcentaje de prote ́ınas del conjunto de alimentos" do
+			expect(@plato1.listagr.prot).to eq(40)
+		end
 
 	end
 
