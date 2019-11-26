@@ -91,7 +91,7 @@ RSpec.describe Listas do
 		@listp.insert_head_var(@queso,@cafe)
 		@listgr = Listas.new()
 		@listp.insert_head_var(250,50)
-		@plato1 = Plato.new("plato1",@listp)
+		@plato1 = Plato.new("plato1",@listp,@listgr)
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                
@@ -184,7 +184,7 @@ RSpec.describe Listas do
 			expect(@plato1.lista).to eq(@listp)
 		end
 		it "Existe un conjunto de cantidades alimentos" do
-                        expect(@plato1.lista).to eq(@listgr)
+                        expect(@plato1.listagr).to eq(@listgr)
                 end
 
 	end
