@@ -86,10 +86,10 @@ RSpec.describe Listas do
 		@enum = Listas.new()
                 @enum.insert_head_var(@queso,@cafe)
 		@enum.insert_head(@nuez)
-		@plato1 = Plato.new("plato1")
+		
 		@listp = Listas.new()
-		@listp.instert_head_var(@queso,@cafe)
-
+		@listp.insert_head_var(@queso,@cafe)
+		@plato1 = Plato.new("plato1",@listp)
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                

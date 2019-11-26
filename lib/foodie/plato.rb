@@ -3,7 +3,7 @@ class Plato
 
 	def initialize (nombre,lista) 
 		@nombre = nombre
-		
+		@lista = lista
 	end
 
 end
