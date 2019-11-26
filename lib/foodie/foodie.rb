@@ -1,6 +1,6 @@
 class Alimentos
 	include Comparable
-	attr_reader :nombre, :gases, :terreno, :prot, :carbo, :lip
+	attr_reader :nombre, :gases, :terreno, :prot, :carbo, :lip, :val_en
 	attr_writer :gases, :terreno, :prot, :carbo, :lip
 	def initialize (nombre,prot,carbo,lip,gei,terr)
 		@nombre = nombre
@@ -17,7 +17,8 @@ class Alimentos
 	kcalc = carbo * 4
 	kcalp = prot * 4
 	kcall = lip * 9
-	(kcalc + kcalp + kcall).round(1)
+	@val_en = (kcalc + kcalp + kcall).round(1)
+	
 end
 	def hombre(prot1,prot2,prot3,terr1,terr2,terr3,gas1,gas2,gas3)
 		if (prot1 + prot2 + prot3) >= 54

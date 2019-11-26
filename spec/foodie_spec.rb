@@ -1,25 +1,27 @@
 require 'foodie'
 
 RSpec.describe Foodie do
-  before(:all) do
-    @vaquita = Alimentos.new("Carne de vaca",21.0,0.0,3.1,50.0,164.0)
-  end
+  	before(:all) do
+    		@vaquita = Alimentos.new("Carne de vaca",21.0,0.0,3.1,50.0,164.0)
+  		@huevos = Alimentos.new("Huevos",13.0,1.1,11,4.2,5.7)
+	end
   
-  it "Existe un metodo para obtener el nombre del Alimento" do
-  expect(@vaquita.nombre).to eq("Carne de vaca")
-end
-it "Se ha podido introducir la cantidad de gases" do
-    @vaquita.gases = 50.0
-  end
-  it "Se puede obtener la cantidad de gases" do
-  expect(@vaquita.gases).to eq(50.0)
-end
-it "Se ha podido introducir la cantidad de terreno usado" do
-    @vaquita.terreno = 164.0
-  end
-  it "Se puede obtener la cantidad de terreno usado" do
-      expect(@vaquita.terreno).to eq(164.0)
-    end
+  	it "Existe un metodo para obtener el nombre del Alimento" do
+  		expect(@vaquita.nombre).to eq("Carne de vaca")
+	end
+	it "Se ha podido introducir la cantidad de gases" do
+    		@vaquita.gases = 50.0
+  	end
+  	it "Se puede obtener la cantidad de gases" do
+  		expect(@vaquita.gases).to eq(50.0)
+	end
+	it "Se ha podido introducir la cantidad de terreno usado" do
+    		@vaquita.terreno = 164.0
+ 	end
+	it "Se puede obtener la cantidad de terreno usado" do
+	      expect(@vaquita.terreno).to eq(164.0)
+	end
+	
 
 
 end
@@ -141,5 +143,11 @@ RSpec.describe Listas do
                 expect(@veg2.terr.round).to eq(29)
                 expect(@carne.terr.round).to eq(386)
         end
+	context "Comparaciones" do
+        	it "Utilizar modulo Comparable para comparar la eficencia energetica" do
+                	expect(@vaquita.val_en > @huevos.val_en).to eq(0)
+        	end
+	end
+
 
 end
