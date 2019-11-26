@@ -13,8 +13,8 @@ class Alimentos
 	def to_s
 		"(#{nombre},#{prot},#{carbo},#{lip},#{gases},#{terreno})"
 	end
-	def val_en
-		kcalc = carbo * 4
+	def cval_en
+	        kcalc = carbo * 4
 		kcalp = prot * 4
 		kcall = lip * 9
 		@val_en = (kcalc + kcalp + kcall).round(1)
@@ -40,6 +40,5 @@ class Alimentos
 	end
 	def <=>(other)
 		val_en <=> other.val_en
-		prot <=> other.prot
 	end
 end

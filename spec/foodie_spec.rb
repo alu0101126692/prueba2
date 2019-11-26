@@ -77,6 +77,9 @@ RSpec.describe Listas do
                 @carne.insert_head_var(@vaquita,@cerdo)
                 @carne.insert_head_var(@lentejas,@lentejas)
                 @carne.insert_head_var(@cafe,@nuez)
+		@chocolate.cval_en()
+		@huevos.cval_en()
+		@vaquita.cval_en()
                 
 
         end
@@ -145,10 +148,12 @@ RSpec.describe Listas do
         end
 	context "Comparaciones" do
         	it "Utilizar modulo Comparable para comparar la eficencia energetica" do
-                	expect(@vaquita.val_en > @huevos.val_en).to eq(false)
+                	expect(@vaquita > @huevos).to eq(false)
         	end
-		it "Comparar informacion nutricional y ambiental" do
-			expect(@vaquita.prot > @huevos.prot).to eq (false)
+		it "Comparar info ambiental y nutricional" do
+			expect(@vaquita < @huevos).to eq (true)
+			expect(@huevos.between?(@vaquita,@chocolate)).to eq(true)
+			expect(@huevos.clamp(@vaquita,@chocolate)).to eq(@huevos)
 		end
 	end
 
