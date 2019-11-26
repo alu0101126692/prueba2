@@ -1,5 +1,6 @@
 class Listas                
 attr_reader :head, :tail
+using 
 Node = Struct.new(:value, :next, :prev)
 	def initialize
 		@head = nil
