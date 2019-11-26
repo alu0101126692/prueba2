@@ -1,6 +1,6 @@
 class Listas                
 attr_reader :head, :tail
-using 
+include Enumerable 
 Node = Struct.new(:value, :next, :prev)
 	def initialize
 		@head = nil
@@ -79,6 +79,14 @@ Node = Struct.new(:value, :next, :prev)
                 end
                 sum += @tail.value.terreno
           end
+
+	  def each(&block)
+		puntero = @head
+		while(puntero!=nil) do
+			yield puntero.value
+			puntero = puntero.prev
+		end
+	  end
 
 
 

@@ -80,7 +80,12 @@ RSpec.describe Listas do
 		@chocolate.cval_en()
 		@huevos.cval_en()
 		@vaquita.cval_en()
-                
+		@queso.cval_en()
+		@nuez.cval_en()
+		@cafe.cval_en()
+		@enum = Listas.new()
+                @enum.insert_head_var(@queso,@cafe)
+		@enum.insert_head(@nuez)
 
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
@@ -155,6 +160,16 @@ RSpec.describe Listas do
 			expect(@huevos.between?(@vaquita,@chocolate)).to eq(true)
 			expect(@huevos.clamp(@vaquita,@chocolate)).to eq(@huevos)
 		end
+	end
+	context "Enumerable" do
+		it "Enumerar listas de alimentos" do
+			expect(@enum.collect { |i| i }).to eq([@nuez,@cafe,@queso])
+			expect(@enum.select { |num| num > @cafe }).to eq ([@nuez,@queso])
+			expect(@enum.max).to eq(@nuez)
+			expect(@enum.min).to eq(@cafe)
+			expect(@enum.sort).to eq([@cafe,@queso,@nuez])
+		end
+
 	end
 
 
