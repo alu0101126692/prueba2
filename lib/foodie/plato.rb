@@ -45,6 +45,14 @@ class Plato
                 end
                 sum
         end
+	def to_s
+		string = @nombre + ",Alimentos: "
+		@lista.zip(@listagr).each do |normal, gr|
+                        string += normal.nombre + " " + gr.to_s + " gr "
+                end
+		string
+	end
+		
 
 
 end
