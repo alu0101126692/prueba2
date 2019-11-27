@@ -214,6 +214,9 @@ RSpec.describe Listas do
 		it "Uso de terreno" do
 			expect(@subplato.terreno()).to eq(110.4)
 		end
+		it "Eficencia energetica" do
+			expect(@subplato.to_s()).to eq("Gases 27.8 Uso de terreno anual 27.8")
+		end
 	end
 
 
