@@ -201,6 +201,9 @@ RSpec.describe Listas do
 			
 			expect(@plato1.vct.round()).to eq(1656)
 		end
+		it "Se obtiene el plato formateado" do
+			expect(@plato1.to_s).to eq("(plato1,Alimentos: queso, 2500g, nuez, 1000g)")
+		end
 	end
 
 
