@@ -92,7 +92,7 @@ RSpec.describe Listas do
 		@listgr = Listas.new()
 		@listgr.insert_head_var(2500,1000)
 		@plato1 = Plato.new("plato1",@listp,@listgr)
-		@subplato = Subplato.new("plato1",@listap,@listagr)
+		@subplato = Subplato.new("plato1",@listp,@listgr)
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                
@@ -207,7 +207,10 @@ RSpec.describe Listas do
 		end
 	end
 	context "Clase que hereda de plato" do
-			expect(@subplato.emisiones()).to eq(1300)
+		it "Emisiones de gases diarias" do
+			
+			expect(@subplato.emisiones()).to eq(27.8)
+		end
 	end
 
 

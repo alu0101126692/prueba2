@@ -56,3 +56,39 @@ class Plato
 
 
 end
+
+
+class Subplato < Plato
+
+attr_reader :gei
+
+        def initialize(nombre,lista,listagr)
+                super(nombre,lista,listagr)
+                gei = 0
+        end
+
+        def emisiones
+                grtotal = 0
+                sum = 0
+		
+                @lista.zip(@listagr).each do |normal, gr|
+                        cant = gr/1000.0
+                        sum += normal.gases*cant
+                end
+                sum
+
+        end
+	def aaaa
+		@lista.gei
+	end	
+
+end
+
+
+
+
+
+
+
+
+
