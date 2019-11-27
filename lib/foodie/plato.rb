@@ -1,4 +1,5 @@
 class Plato
+include Comparable
 	attr_reader :nombre, :lista, :listagr
 
 	def initialize (nombre,lista,listagr) 
@@ -51,6 +52,9 @@ class Plato
                         string += normal.nombre + " " + gr.to_s + " gr "
                 end
 		string
+	end
+	def <=> (other)
+		vct <=> other.vct
 	end
 		
 

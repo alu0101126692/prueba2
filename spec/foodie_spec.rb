@@ -83,6 +83,12 @@ RSpec.describe Listas do
 		@queso.cval_en()
 		@nuez.cval_en()
 		@cafe.cval_en()
+		@cerdo.cval_en()
+		@lentejas.cval_en()
+		@leche.cval_en()
+		@cordero.cval_en()
+
+
 		@enum = Listas.new()
                 @enum.insert_head_var(@queso,@cafe)
 		@enum.insert_head(@nuez)
@@ -248,10 +254,10 @@ RSpec.describe Listas do
 			expect(@plato1.to_s()).to eq("plato1,Alimentos: Nuez 1000 gr Queso 2500 gr ")
 		end
 		it "Comparable" do
-			expect(@platoesp > ingveg).to eq(true)
+			expect(@platoesp > @platoveg).to eq(true)
 			expect(@platovas == @platovas).to eq(true)
-			expect(@platoesp.between?(@platoveg2,@platocarne).to eq(true)
-			expect(@platocar.clamp(@ingvas,@platoesp).to eq(true)
+			expect(@platoesp.between?(@platoveg2,@platocar)).to eq(false)
+			expect(@platocar.clamp(@platoveg2,@platoesp)).to eq(@platoveg2)
 		end
 	end
 
