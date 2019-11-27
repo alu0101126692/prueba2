@@ -92,6 +92,7 @@ RSpec.describe Listas do
 		@listgr = Listas.new()
 		@listgr.insert_head_var(2500,1000)
 		@plato1 = Plato.new("plato1",@listp,@listgr)
+		@subplato = Subplato.new("plato1",@listap,@listagr)
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                
@@ -204,6 +205,9 @@ RSpec.describe Listas do
 		it "Se obtiene el plato formateado" do
 			expect(@plato1.to_s()).to eq("plato1,Alimentos: Nuez 1000 gr Queso 2500 gr ")
 		end
+	end
+	context "Clase que hereda de plato" do
+			expect(@subplato.emisiones()).to eq(1300)
 	end
 
 
