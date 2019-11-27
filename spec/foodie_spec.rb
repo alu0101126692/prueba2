@@ -189,13 +189,13 @@ RSpec.describe Listas do
                 end
 		it "Porcentaje de proteinas del conjunto de alimentos" do
 			
-			expect(@plato1.recorr.round()).to eq(24)
+			expect(@plato1.prot.round()).to eq(24)
 		end
 		it "Porcentaje de lipidos del conjunto de alimentos" do
 			expect(@plato1.lip.round()).to eq(39)
 		end
 		 it "Porcentaje de lipidos del conjunto de alimentos" do
-                        expect(@plato1.lip.round()).to eq(39)
+                        expect(@plato1.carbo.round()).to eq(7)
                 end
 
 		
