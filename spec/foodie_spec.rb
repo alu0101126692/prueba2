@@ -194,6 +194,11 @@ RSpec.describe Listas do
 		it "Porcentaje de lipidos del conjunto de alimentos" do
 			expect(@plato1.lip.round()).to eq(39)
 		end
+		 it "Porcentaje de lipidos del conjunto de alimentos" do
+                        expect(@plato1.lip.round()).to eq(39)
+                end
+
+		
 	end
 
 
