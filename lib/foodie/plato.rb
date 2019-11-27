@@ -78,9 +78,19 @@ attr_reader :gei
                 sum
 
         end
-	def aaaa
-		@lista.gei
-	end	
+	def terreno
+                grtotal = 0
+                sum = 0
+
+                @lista.zip(@listagr).each do |normal, gr|
+                        cant = gr/1000.0
+                        sum += normal.terreno*cant
+                end
+                sum
+
+        end
+
+	
 
 end
 

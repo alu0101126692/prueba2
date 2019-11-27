@@ -212,7 +212,7 @@ RSpec.describe Listas do
 			expect(@subplato.emisiones()).to eq(27.8)
 		end
 		it "Uso de terreno" do
-			expect(@subplato.terreno()).to eq(3000)
+			expect(@subplato.terreno()).to eq(110.4)
 		end
 	end
 
