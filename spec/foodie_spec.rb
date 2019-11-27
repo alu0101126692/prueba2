@@ -140,6 +140,46 @@ RSpec.describe Listas do
                 @cargr.insert_head_var(100,100)
                 @platocar = Plato.new("Carne",@ingcar,@cargr)
 
+		@listaesp = Listas.new()
+		@ingesp2 = Listas.new()
+		@ingesp2.insert_head_var(@cerdo,@cerdo)
+                @ingesp2.insert_head_var(@lentejas,@leche)
+                @espgr2 = Listas.new()
+                @espgr2.insert_head_var(500,200)
+                @espgr2.insert_head_var(250,100)
+                @platoesp2 = Plato.new("Española",@ingesp2,@espgr2)
+
+		@listaesp.insert_head_var(@ingesp,@ingesp2)
+		
+		@listavas = Listas.new()
+		@ingvas2 = Listas.new()
+                @ingvas2.insert_head_var(@cerdo,@leche)
+                @ingvas2.insert_head_var(@lentejas,@leche)
+                @vasgr2 = Listas.new()
+                @vasgr2.insert_head_var(400,350)
+                @vasgr2.insert_head_var(100,100)
+                @platovas2 = Plato.new("Vasca",@ingvas2,@vasgr2)
+		@listavas.insert_head_var(@ingvas,@ingvas2)
+		@listaveg = Listas.new()
+		@ingveg2 = Listas.new()
+                @ingveg2.insert_head_var(@huevos,@queso)
+                @ingveg2.insert_head_var(@queso,@cafe)
+                @veggr2 = Listas.new()
+                @veggr2.insert_head_var(200,200)
+                @veggr2.insert_head_var(100,100)
+                @platoveg3 = Plato.new("Vegetaria",@ingveg2,@veggr2)
+		
+		@listaveg.insert_head_var(@platoveg,@platoveg3)	
+		@listaveg2 = Listas.new()
+                @ingveg4 = Listas.new()
+                @ingveg4.insert_head_var(@lentejas,@chocolate)
+                @ingveg4.insert_head_var(@nuez,@cafe)
+                @veg4gr = Listas.new()
+                @veg4gr.insert_head_var(200,150)
+                @veg4gr.insert_head_var(100,100)
+                @platoveg2 = Plato.new("Vegetaliana",@ingveg2,@veg2gr)
+
+		@listaveg2.insert_head_var(@platoveg2,@platoveg4)
 
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
@@ -259,6 +299,14 @@ RSpec.describe Listas do
 			expect(@platoesp.between?(@platoveg2,@platocar)).to eq(false)
 			expect(@platocar.clamp(@platoveg2,@platoesp)).to eq(@platoveg2)
 		end
+		it "Enumerar listas de platos" do
+                        expect(@platoesp.collect { |i| i }).to eq([@nuez,@cafe])
+                        expect(@enum.select { |num| num > @cafe }).to eq (@cafe)
+                        expect(@enum.max).to eq(@nuez)
+                        expect(@enum.min).to eq(@cafe)
+                        expect(@enum.sort).to eq([@cafe,@queso,@nuez])
+                end
+
 	end
 
 	context "Subclase que hereda de plato" do
