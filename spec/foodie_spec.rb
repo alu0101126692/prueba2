@@ -217,6 +217,14 @@ RSpec.describe Listas do
 		it "Eficencia energetica" do
 			expect(@subplato.to_s()).to eq("Gases 27.8 Uso de terreno anual 110.4")
 		end
+		it "Clase de un objeto, tipo de un objeto" do
+			expect(@subplato.class).to eq(Subplato)
+			expect(@plato1.class).to eq(Plato)
+			expect(@subplato.is_a?Plato).to eq(true)
+			expect(@subplato.kind_of?Subplato).to eq(true)
+			expect(@subplato.instance_of?Plato).to eq(false)
+		
+		end
 	end
 
 
