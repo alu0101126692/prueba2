@@ -93,6 +93,48 @@ RSpec.describe Listas do
 		@listgr.insert_head_var(2500,1000)
 		@plato1 = Plato.new("plato1",@listp,@listgr)
 		@subplato = Subplato.new("plato1",@listp,@listgr)
+		
+		@ingesp = Listas.new()
+		@ingesp.insert_head_var(@cerdo,@queso)
+                @ingesp.insert_head_var(@lentejas,@leche)
+                @espgr = Listas.new()
+		@espgr.insert_head_var(500,200)
+                @espgr.insert_head_var(250,100)
+		@platoesp = Plato.new("Española",@ingesp,@espgr)
+		
+		@ingvas = Listas.new()
+                @ingvas.insert_head_var(@cerdo,@chocolate)
+                @ingvas.insert_head_var(@lentejas,@leche)
+                @vasgr = Listas.new()
+                @vasgr.insert_head_var(400,350)
+                @vasgr.insert_head_var(100,100)
+                @platovas = Plato.new("Vasca",@ingvas,@vasgr)
+		
+		@ingveg = Listas.new()
+                @ingveg.insert_head_var(@huevos,@queso)
+                @ingveg.insert_head_var(@nuez,@cafe)
+                @veggr = Listas.new()
+                @veggr.insert_head_var(200,200)
+                @veggr.insert_head_var(100,100)
+                @platoveg = Plato.new("Vegetaria",@ingveg,@veggr)
+			
+		@ingveg2 = Listas.new()
+                @ingveg2.insert_head_var(@lentejas,@chocolate)
+                @ingveg2.insert_head_var(@nuez,@cafe)
+                @veg2gr = Listas.new()
+                @veg2gr.insert_head_var(200,150)
+                @veg2gr.insert_head_var(100,100)
+                @platoveg2 = Plato.new("Vegetaliana",@ingveg2,@veg2gr)
+		
+		@ingcar = Listas.new()
+                @ingcar.insert_head_var(@cerdo,@cordero)
+                @ingcar.insert_head_var(@lentejas,@leche)
+                @cargr = Listas.new()
+                @cargr.insert_head_var(250,200)
+                @cargr.insert_head_var(100,100)
+                @platocar = Plato.new("Carne",@ingcar,@cargr)
+
+
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
                
@@ -205,8 +247,16 @@ RSpec.describe Listas do
 		it "Se obtiene el plato formateado" do
 			expect(@plato1.to_s()).to eq("plato1,Alimentos: Nuez 1000 gr Queso 2500 gr ")
 		end
+		it "Comparable" do
+			expect(@platoesp > ingveg).to eq(true)
+			expect(@platovas == @platovas).to eq(true)
+			expect(@platoesp.between?(@platoveg2,@platocarne).to eq(true)
+			expect(@platocar.clamp(@ingvas,@platoesp).to eq(true)
+		end
 	end
-	context "Clase que hereda de plato" do
+
+	context "Subclase que hereda de plato" do
+	
 		it "Emisiones de gases diarias" do
 			
 			expect(@subplato.emisiones()).to eq(27.8)
@@ -233,6 +283,7 @@ RSpec.describe Listas do
 			expect(@plato1.respond_to?:nombre).to eq(true)
 		end
 	end
+end	
 
 
-end
+
