@@ -60,11 +60,12 @@ end
 
 class Subplato < Plato
 
-attr_reader :gei
+attr_reader :gei, :terreno
 
         def initialize(nombre,lista,listagr)
                 super(nombre,lista,listagr)
-                gei = 0
+                @gei = 0
+		@terreno = 0
         end
 
         def emisiones
@@ -75,7 +76,7 @@ attr_reader :gei
                         cant = gr/1000.0
                         sum += normal.gases*cant
                 end
-                sum
+                @gei = sum
 
         end
 	def terreno
@@ -86,9 +87,13 @@ attr_reader :gei
                         cant = gr/1000.0
                         sum += normal.terreno*cant
                 end
-                sum
+                @terreno = sum
 
         end
+	
+	def to_s
+		string = "Gases " + @gei.to_s + " Uso de terreno anual " + @terreno.to_s
+	end
 
 	
 
