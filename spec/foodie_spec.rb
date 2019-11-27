@@ -88,9 +88,9 @@ RSpec.describe Listas do
 		@enum.insert_head(@nuez)
 		
 		@listp = Listas.new()
-		@listp.insert_head_var(@queso,@cafe)
+		@listp.insert_head_var(@queso,@nuez)
 		@listgr = Listas.new()
-		@listp.insert_head_var(250,50)
+		@listgr.insert_head_var(250,100)
 		@plato1 = Plato.new("plato1",@listp,@listgr)
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
@@ -162,6 +162,7 @@ RSpec.describe Listas do
         	end
 		it "Comparar info ambiental y nutricional" do
 			expect(@vaquita < @huevos).to eq (true)
+			expect(@huevos == @huevos).to eq (true)
 			expect(@huevos.between?(@vaquita,@chocolate)).to eq(true)
 			expect(@huevos.clamp(@vaquita,@chocolate)).to eq(@huevos)
 		end
@@ -187,7 +188,8 @@ RSpec.describe Listas do
                         expect(@plato1.listagr).to eq(@listgr)
                 end
 		it "Porcentaje de prote ́ınas del conjunto de alimentos" do
-			expect(@plato1.listagr.prot).to eq(40)
+			
+			expect(@plato1.recorr).to eq(23.571428571428573)
 		end
 
 	end

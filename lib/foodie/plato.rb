@@ -6,5 +6,14 @@ class Plato
 		@lista = lista
 		@listagr = listagr
 	end
-
+	def recorr
+		grtotal = 0
+		sum = 0
+		@lista.zip(@listagr).each do |normal, gr|
+			grtotal += gr
+			cant = gr/100.0
+			sum += normal.prot*cant 
+		end
+		(sum*100)/grtotal
+	end
 end

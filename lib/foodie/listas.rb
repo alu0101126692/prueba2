@@ -87,6 +87,8 @@ Node = Struct.new(:value, :next, :prev)
 			puntero = puntero.prev
 		end
 	  end
+	 
+
 
 
 
