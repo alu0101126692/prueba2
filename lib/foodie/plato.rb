@@ -1,5 +1,6 @@
 class Plato
 include Comparable
+include Enumerable
 	attr_reader :nombre, :lista, :listagr
 
 	def initialize (nombre,lista,listagr) 
@@ -56,6 +57,8 @@ include Comparable
 	def <=> (other)
 		vct <=> other.vct
 	end
+	
+
 		
 
 

@@ -147,9 +147,9 @@ RSpec.describe Listas do
                 @espgr2 = Listas.new()
                 @espgr2.insert_head_var(500,200)
                 @espgr2.insert_head_var(250,100)
-                @platoesp2 = Plato.new("Española",@ingesp2,@espgr2)
+                @platoesp2 = Plato.new("Española",@ingesp,@espgr2)
 
-		@listaesp.insert_head_var(@ingesp,@ingesp2)
+		@listaesp.insert_head_var(@platoesp,@platoesp2)
 		
 		@listavas = Listas.new()
 		@ingvas2 = Listas.new()
@@ -159,7 +159,7 @@ RSpec.describe Listas do
                 @vasgr2.insert_head_var(400,350)
                 @vasgr2.insert_head_var(100,100)
                 @platovas2 = Plato.new("Vasca",@ingvas2,@vasgr2)
-		@listavas.insert_head_var(@ingvas,@ingvas2)
+		@listavas.insert_head_var(@platovas,@platovas2)
 		@listaveg = Listas.new()
 		@ingveg2 = Listas.new()
                 @ingveg2.insert_head_var(@huevos,@queso)
@@ -300,11 +300,11 @@ RSpec.describe Listas do
 			expect(@platocar.clamp(@platoveg2,@platoesp)).to eq(@platoveg2)
 		end
 		it "Enumerar listas de platos" do
-                        expect(@platoesp.collect { |i| i }).to eq([@nuez,@cafe])
-                        expect(@enum.select { |num| num > @cafe }).to eq (@cafe)
-                        expect(@enum.max).to eq(@nuez)
-                        expect(@enum.min).to eq(@cafe)
-                        expect(@enum.sort).to eq([@cafe,@queso,@nuez])
+                        expect(@listaesp.collect { |i| i }).to eq([@platoesp2,@platoesp])
+                        expect(@listavas.select { |num| num > @platovas }).to eq ([])
+                        expect(@listaveg.max).to eq(@platoveg)
+                        expect(@listaveg.min).to eq(@platoveg3)
+                        expect(@listaveg.sort).to eq([@platoveg3,@platoveg])
                 end
 
 	end
