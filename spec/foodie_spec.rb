@@ -194,11 +194,12 @@ RSpec.describe Listas do
 		it "Porcentaje de lipidos del conjunto de alimentos" do
 			expect(@plato1.lip.round()).to eq(39)
 		end
-		 it "Porcentaje de lipidos del conjunto de alimentos" do
+		it "Porcentaje de lipidos del conjunto de alimentos" do
                         expect(@plato1.carbo.round()).to eq(7)
                 end
-
-		
+		it "Valor calorico total en kilocalorias" do
+			expect(@plato1.cvt.round()).to eq(7)
+		end
 	end
 
 
