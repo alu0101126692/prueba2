@@ -90,7 +90,7 @@ RSpec.describe Listas do
 		@listp = Listas.new()
 		@listp.insert_head_var(@queso,@nuez)
 		@listgr = Listas.new()
-		@listgr.insert_head_var(250,100)
+		@listgr.insert_head_var(2500,1000)
 		@plato1 = Plato.new("plato1",@listp,@listgr)
         end
         it "Existe nodo de la lista con sus datos, su siguiente y su previo" do
@@ -189,16 +189,17 @@ RSpec.describe Listas do
                 end
 		it "Porcentaje de proteinas del conjunto de alimentos" do
 			
-			expect(@plato1.prot.round()).to eq(24)
+			expect(@plato1.prot.round()).to eq(2)
 		end
 		it "Porcentaje de lipidos del conjunto de alimentos" do
-			expect(@plato1.lip.round()).to eq(39)
+			expect(@plato1.lip.round()).to eq(4)
 		end
 		it "Porcentaje de lipidos del conjunto de alimentos" do
-                        expect(@plato1.carbo.round()).to eq(7)
+                        expect(@plato1.carbo.round()).to eq(1)
                 end
 		it "Valor calorico total en kilocalorias" do
-			expect(@plato1.cvt.round()).to eq(7)
+			
+			expect(@plato1.vct.round()).to eq(1656)
 		end
 	end
 
